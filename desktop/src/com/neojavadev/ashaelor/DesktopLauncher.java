@@ -12,9 +12,7 @@ public class DesktopLauncher {
 		config.setIdleFPS(60);
 		config.useVsync(true);
 		config.setTitle("Ash'Aelor");
-
-		config.setWindowedMode(960,640);
-		//config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());
+		config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());
 
 		new Lwjgl3Application(new Boot(), config);
 
