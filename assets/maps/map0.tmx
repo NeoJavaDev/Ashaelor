@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="4" nextobjectid="26">
+ <tileset firstgid="1" source="tiles.tsx"/>
+ <objectgroup id="3" name="objects">
+  <object id="14" name="TopLeftCastle" x="576" y="256" width="64" height="64"/>
+  <object id="15" name="TopRightCastle" x="640" y="256" width="64" height="64"/>
+  <object id="16" name="LowLeftCastle" x="448" y="384" width="64" height="64"/>
+  <object id="17" name="LowRightCastle" x="768" y="384" width="64" height="64"/>
+  <object id="18" name="LeftGuard" x="512" y="448" width="64" height="64"/>
+  <object id="19" name="RightGuard" x="704" y="448" width="64" height="64"/>
+  <object id="20" name="LeftTavern" x="448" y="640" width="64" height="64"/>
+  <object id="21" name="RightTavern" x="768" y="576" width="64" height="64"/>
+  <object id="22" name="EntryGuard" x="640" y="832" width="64" height="64"/>
+  <object id="24" name="Player" x="640" y="1152" width="64" height="64"/>
+ </objectgroup>
+ <layer id="1" name="Background" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzzYmBg8ELCo4D6wBSK0YE3vR2CZic2N2ETIwVIALEyFEtQaBY6oEV4qQ2QXmRAbX8RYx6ldlIzbgciH4wC6gAATpQE5A==
+  </data>
+ </layer>
+</map>
