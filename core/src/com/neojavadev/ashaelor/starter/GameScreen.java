@@ -1,4 +1,4 @@
-package com.neojavadev.ashaelor;
+package com.neojavadev.ashaelor.starter;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -12,22 +12,20 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.neojavadev.ashaelor.starter.Boot;
 import com.neojavadev.ashaelor.tools.TileMapHelper;
 
 import static com.neojavadev.ashaelor.tools.Constants.PPM;
 
 public class GameScreen extends ScreenAdapter {
-
     private OrthographicCamera orthographicCamera;
     private SpriteBatch spriteBatch;
     private Box2DDebugRenderer box2DDebugRenderer;
+    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
+    private TileMapHelper tileMapHelper;
     private World world;
 
     private boolean drawGrid = true;
-
-    private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
-    private TileMapHelper tileMapHelper;
-
 
 
     public GameScreen(OrthographicCamera orthographicCamera) {
@@ -37,7 +35,7 @@ public class GameScreen extends ScreenAdapter {
         this.world = new World(new Vector2(0,0),false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
-        this.tileMapHelper = new TileMapHelper();
+        this.tileMapHelper = new TileMapHelper(this);
         this.orthogonalTiledMapRenderer = tileMapHelper.setupMap();
     }
 
@@ -48,7 +46,10 @@ public class GameScreen extends ScreenAdapter {
 
         ScreenUtils.clear(0, 0, 0, 1);
 
-        drawGrid();
+        // draw Grid
+        if(drawGrid){
+            drawGrid();
+        }
 
         // render the map
         orthogonalTiledMapRenderer.render();
@@ -56,7 +57,6 @@ public class GameScreen extends ScreenAdapter {
         spriteBatch.begin();
 
         // render all the object
-
         spriteBatch.end();
         box2DDebugRenderer.render(world,orthographicCamera.combined.scl(PPM));
     }
@@ -72,8 +72,7 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void cameraUpdate() {
-        Vector3 position = orthographicCamera.position;
-        orthographicCamera.position.set(position);
+        orthographicCamera.position.set(new Vector3(0,0,0));
         orthographicCamera.update();
     }
 
@@ -91,4 +90,11 @@ public class GameScreen extends ScreenAdapter {
         Boot.shapeRenderer.end();
     }
 
+    public World getWorld() {
+        return world;
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
 }

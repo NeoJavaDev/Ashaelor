@@ -1,4 +1,4 @@
-package com.neojavadev.ashaelor;
+package com.neojavadev.ashaelor.starter;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
@@ -11,7 +11,7 @@ public class DesktopLauncher {
 		config.setForegroundFPS(60);
 		config.setIdleFPS(60);
 		config.useVsync(true);
-		config.setTitle("Ash'Aelor");
+		config.setTitle("Asth'Aelor");
 		config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());
 
 		new Lwjgl3Application(new Boot(), config);

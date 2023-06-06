@@ -1,13 +1,9 @@
-package com.neojavadev.ashaelor;
+package com.neojavadev.ashaelor.starter;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Boot extends Game {
 
@@ -17,21 +13,18 @@ public class Boot extends Game {
 	protected static ShapeRenderer shapeRenderer;
 
 
-
 	public Boot() {
 		INSTANCE = this;
 	}
 
 	@Override
 	public void create() {
-
 		this.screenWidth = Gdx.graphics.getWidth();
 		this.screenHeight = Gdx.graphics.getHeight();
 		this.orthographicCamera = new OrthographicCamera();
 		this.orthographicCamera.setToOrtho(false,screenWidth,screenHeight);
 		this.shapeRenderer = new ShapeRenderer();
 		setScreen(new GameScreen(orthographicCamera));
-
 	}
 
 	@Override
