@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="4" nextobjectid="26">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="4" nextobjectid="43">
  <tileset firstgid="1" source="tiles.tsx"/>
  <objectgroup id="3" name="objects">
-  <object id="14" name="TopLeftCastle" x="576" y="256" width="64" height="64"/>
-  <object id="15" name="TopRightCastle" x="640" y="256" width="64" height="64"/>
-  <object id="16" name="LowLeftCastle" x="448" y="384" width="64" height="64"/>
-  <object id="17" name="LowRightCastle" x="768" y="384" width="64" height="64"/>
-  <object id="18" name="LeftGuard" x="512" y="448" width="64" height="64"/>
-  <object id="19" name="RightGuard" x="704" y="448" width="64" height="64"/>
-  <object id="20" name="LeftTavern" x="448" y="640" width="64" height="64"/>
-  <object id="21" name="RightTavern" x="768" y="576" width="64" height="64"/>
-  <object id="22" name="EntryGuard" x="640" y="832" width="64" height="64"/>
   <object id="24" name="Player" x="640" y="1152" width="64" height="64"/>
+  <object id="33" name="topLeftCastle" x="577" y="319">
+   <polygon points="0,0 0,-63.5 62.5,-63 62.5,1"/>
+  </object>
+  <object id="35" name="topRightCastle" x="639" y="256">
+   <polygon points="0,0 65,0 65,64.5 1.5,64"/>
+  </object>
+  <object id="36" name="bottomLeftCastle" x="448" y="384.5">
+   <polygon points="0,0 63,0 64.5,63 0.5,62.5"/>
+  </object>
+  <object id="37" name="bottomRightCastle" x="767.5" y="384">
+   <polygon points="0,0 65,0.5 65,63 0.5,63.5"/>
+  </object>
+  <object id="38" name="entryGuard" x="639.5" y="832">
+   <polygon points="0,0 63.5,0 64.5,64 1,65"/>
+  </object>
+  <object id="39" name="leftTavern" x="447.5" y="640">
+   <polygon points="0,0 64,0 64,63.5 1,63"/>
+  </object>
+  <object id="40" name="rightTavern" x="767.5" y="576.5">
+   <polygon points="0,0 65,-1 64.5,63.5 1,64"/>
+  </object>
+  <object id="41" name="leftGuard" x="512.5" y="447.5">
+   <polygon points="0,0 64,-0.5 63,63 -0.5,64"/>
+  </object>
+  <object id="42" name="rightGuard" x="705" y="448">
+   <polygon points="0,0 62,0 63,63.5 0,63.5"/>
+  </object>
  </objectgroup>
  <layer id="1" name="Background" width="20" height="20">
   <data encoding="base64" compression="zlib">
