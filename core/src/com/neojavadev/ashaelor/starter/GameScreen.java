@@ -12,6 +12,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.neojavadev.ashaelor.entities.player.Player;
 import com.neojavadev.ashaelor.starter.Boot;
 import com.neojavadev.ashaelor.tools.TileMapHelper;
 
@@ -24,8 +25,10 @@ public class GameScreen extends ScreenAdapter {
     private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
     private TileMapHelper tileMapHelper;
     private World world;
-
     private boolean drawGrid = true;
+
+    //game objects
+    private Player player;
 
 
     public GameScreen(OrthographicCamera orthographicCamera) {
@@ -72,7 +75,10 @@ public class GameScreen extends ScreenAdapter {
     }
 
     private void cameraUpdate() {
-        orthographicCamera.position.set(new Vector3(0,0,0));
+        Vector3 position = orthographicCamera.position;
+        position.x = Math.round(player.getBody().getPosition().x * PPM * 10) / 10f;
+        position.y = Math.round(player.getBody().getPosition().y * PPM * 10) / 10f;
+        orthographicCamera.position.set(position);
         orthographicCamera.update();
     }
 
@@ -96,5 +102,9 @@ public class GameScreen extends ScreenAdapter {
 
     public void setWorld(World world) {
         this.world = world;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }
